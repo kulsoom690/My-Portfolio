@@ -1,0 +1,1756 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kulsoom Bano | Graduate Software Developer | AI Automation Engineer | Full-Stack & Mobile Developer" />
+  <meta name="theme-color" content="#08111f" />
+  <meta property="og:title" content="Kulsoom Bano | Portfolio" />
+  <meta property="og:description" content="AI automation, full-stack development, and mobile applications by Kulsoom Bano." />
+  <meta property="og:type" content="website" />
+  <title>Kulsoom Bano | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  <style>
+    :root {
+      --bg: #060d19;
+      --bg-soft: #101c31;
+      --panel: rgba(13, 22, 36, 0.9);
+      --panel-strong: #0c1729;
+      --card: rgba(18, 29, 45, 0.9);
+      --primary: #6cc7ff;
+      --primary-strong: #4894ff;
+      --accent: #87f0c8;
+      --text: #edf4ff;
+      --muted: #a8bbd7;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 25px 60px rgba(13, 15, 28, 0.45);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(ellipse at 18% 10%, rgba(29, 76, 127, 0.32), transparent 40%),
+        radial-gradient(ellipse at 82% 58%, rgba(40, 37, 104, 0.24), transparent 42%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 75% 25%, rgba(108, 199, 255, 0.09), transparent 32%),
+        radial-gradient(ellipse at 25% 78%, rgba(135, 120, 255, 0.08), transparent 36%);
+      animation: nebula-drift 28s ease-in-out infinite alternate;
+    }
+
+    #starfield {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 1;
+    }
+
+    body > header,
+    body > main,
+    body > footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes nebula-drift {
+      from { transform: translate3d(-1.2%, -0.6%, 0) scale(1); }
+      to { transform: translate3d(1.2%, 0.8%, 0) scale(1.04); }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { padding-left: 0; margin: 0; list-style: none; }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(8, 17, 31, 0.88);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #06111d;
+      font-weight: 800;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .brand:hover .brand-mark {
+      transform: rotate(-7deg) scale(1.06);
+      box-shadow: 0 0 24px rgba(108, 199, 255, 0.35);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav a:hover { color: var(--text); }
+
+    .nav a:not(.nav-mobile-cta) {
+      position: relative;
+      transition: color 180ms ease;
+    }
+
+    .nav a:not(.nav-mobile-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -7px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    .nav a:hover::after,
+    .nav a.is-active::after { transform: scaleX(1); }
+
+    .nav a.is-active { color: var(--text); }
+
+    .nav-mobile-cta { display: none; }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::after {
+      content: "";
+      position: absolute;
+      top: -60%;
+      left: -50%;
+      width: 32%;
+      height: 220%;
+      background: rgba(255, 255, 255, 0.24);
+      transform: translateX(-180%) rotate(22deg);
+      transition: transform 550ms ease;
+      pointer-events: none;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: #06111d;
+      box-shadow: 0 16px 30px rgba(72, 148, 255, 0.28);
+    }
+
+    .button.secondary {
+      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.24), 0 0 22px rgba(108, 199, 255, 0.12);
+    }
+
+    .button:hover::after { transform: translateX(560%) rotate(22deg); }
+    .button:active { transform: translateY(-1px) scale(0.985); }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .hero {
+      padding: 82px 0 52px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 8% 0 auto auto;
+      width: min(44vw, 560px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(108, 199, 255, 0.12), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(108, 199, 255, 0.25);
+      background: rgba(108, 199, 255, 0.08);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .eyebrow:hover {
+      background: rgba(108, 199, 255, 0.13);
+      border-color: rgba(108, 199, 255, 0.42);
+      box-shadow: 0 0 22px rgba(108, 199, 255, 0.1);
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 5vw, 4.8rem);
+      line-height: 1.06;
+      margin: 18px 0 18px;
+      letter-spacing: -0.06em;
+    }
+
+    h1 span {
+      color: var(--primary);
+      display: block;
+    }
+
+    h2 { margin: 0 0 12px; }
+    h3 { margin: 0 0 16px; }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card {
+      position: relative;
+      border: none;
+      background: transparent;
+      border-radius: var(--radius);
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      border-radius: 26px;
+      overflow: visible;
+      border: none;
+      background: transparent;
+      width: 100%;
+      max-width: 660px;
+      height: min(780px, 82vh);
+      margin: 0 auto;
+      isolation: isolate;
+    }
+
+    .portrait-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 12% 5% 5%;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(108, 199, 255, 0.16), transparent 70%);
+      filter: blur(8px);
+      animation: portrait-glow 5s ease-in-out infinite alternate;
+    }
+
+    .portrait-wrap img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      opacity: 0;
+      transform: translateY(10px) scale(0.985);
+      -webkit-mask-image: radial-gradient(ellipse 96% 96% at 50% 47%, #000 82%, transparent 100%);
+      mask-image: radial-gradient(ellipse 96% 96% at 50% 47%, #000 82%, transparent 100%);
+      filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.3));
+      background: transparent;
+      transition: opacity 750ms ease, transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .portrait-wrap img.is-active {
+      opacity: 1;
+      animation: portrait-float 5s ease-in-out infinite alternate;
+    }
+
+    .portrait-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .portrait-control {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      cursor: pointer;
+      transition: background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .portrait-control:hover,
+    .portrait-control:focus-visible {
+      background: rgba(108, 199, 255, 0.14);
+      border-color: rgba(108, 199, 255, 0.4);
+    }
+
+    .portrait-count {
+      min-width: 42px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+    }
+
+    @keyframes portrait-glow {
+      from { opacity: 0.55; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1.04); }
+    }
+
+    @keyframes portrait-float {
+      from { transform: translateY(3px) scale(1); }
+      to { transform: translateY(-5px) scale(1.012); }
+    }
+
+    .mini-stats {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .mini-stats .stat {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .stat span { color: var(--muted); font-size: 0.85rem; }
+
+    .badge,
+    .skill-card li,
+    .project-card .tag,
+    .project-card .tech span,
+    .repo-meta span {
+      transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .badge:hover,
+    .skill-card li:hover,
+    .project-card .tech span:hover,
+    .repo-meta span:hover {
+      color: var(--text);
+      border-color: rgba(108, 199, 255, 0.42);
+      background-color: rgba(108, 199, 255, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .stat {
+      transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
+    }
+
+    section {
+      padding: 64px 0;
+      scroll-margin-top: 88px;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+      max-width: 760px;
+    }
+
+    .section-heading .kicker {
+      color: var(--primary);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.05em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0;
+    }
+
+    .about-grid,
+    .experience-grid,
+    .projects-grid,
+    .contact-grid {
+      display: grid;
+      gap: 26px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.1fr 1fr;
+      align-items: start;
+    }
+
+    .panel {
+      min-width: 0;
+      background: rgba(15, 23, 38, 0.82);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel,
+    .skill-card,
+    .project-card,
+    .repo-card,
+    .availability {
+      transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+    }
+
+    .panel:hover,
+    .skill-card:hover,
+    .project-card:hover,
+    .repo-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(108, 199, 255, 0.22);
+    }
+
+    .info-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .info-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      min-width: 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .info-list li span {
+      min-width: 0;
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+    .info-list strong {
+      color: var(--text);
+      font-weight: 700;
+      min-width: 120px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .skill-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .skill-card ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-card li {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(108, 199, 255, 0.08);
+      color: var(--text);
+      border: 1px solid rgba(108, 199, 255, 0.14);
+      font-size: 0.82rem;
+    }
+
+    .experience-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 0 0 8px rgba(108, 199, 255, 0.12);
+      transition: box-shadow 220ms ease, transform 220ms ease;
+    }
+
+    .timeline-item:hover::before {
+      transform: scale(1.18);
+      box-shadow: 0 0 0 11px rgba(108, 199, 255, 0.16), 0 0 18px rgba(108, 199, 255, 0.3);
+    }
+
+    .timeline-item .meta {
+      color: var(--primary);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p, .timeline-item li {
+      color: var(--muted);
+    }
+
+    .timeline-item ul {
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-card, .repo-card {
+      background: rgba(15, 23, 38, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .project-card .thumb {
+      height: 220px;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(135, 240, 200, 0.22), transparent 35%),
+        linear-gradient(135deg, rgba(34, 80, 123, 0.52), rgba(19, 36, 56, 0.92));
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-card .thumb i {
+      color: rgba(237, 244, 255, 0.88);
+      font-size: 4rem;
+      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.22));
+      transition: transform 300ms ease, color 300ms ease;
+    }
+
+    .project-card:hover .thumb i {
+      transform: translateY(-5px) scale(1.1) rotate(-4deg);
+      color: var(--accent);
+    }
+
+    .project-card:nth-child(2) .thumb {
+      background:
+        radial-gradient(circle at 25% 30%, rgba(135, 240, 200, 0.2), transparent 34%),
+        linear-gradient(135deg, rgba(29, 75, 73, 0.6), rgba(19, 36, 56, 0.92));
+    }
+
+    .project-card:nth-child(3) .thumb {
+      background:
+        radial-gradient(circle at 75% 25%, rgba(255, 193, 115, 0.18), transparent 35%),
+        linear-gradient(135deg, rgba(96, 62, 83, 0.6), rgba(19, 36, 56, 0.92));
+    }
+
+    .project-card .content {
+      padding: 22px;
+    }
+
+    .project-card .tag {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 1.28rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .project-card .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .project-card .tech span {
+      display: inline-block;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .project-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      gap: 12px;
+    }
+
+    .project-links a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .github-panel {
+      margin-top: 24px;
+      padding: 28px;
+      background: rgba(15,23,38,0.82);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .github-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .repo-card {
+      padding: 18px;
+    }
+
+    .repo-status {
+      color: var(--muted);
+      margin: 0;
+      grid-column: 1 / -1;
+    }
+
+    .repo-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .repo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .repo-card h4 {
+      margin: 0;
+      font-size: 1.05rem;
+      overflow-wrap: anywhere;
+    }
+
+    .repo-card__top a {
+      color: var(--primary);
+      transition: transform 180ms ease, color 180ms ease;
+    }
+
+    .repo-card__top a:hover {
+      color: var(--accent);
+      transform: translate(2px, -2px);
+    }
+
+    .repo-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 10px 0 14px;
+      min-height: 58px;
+    }
+
+    .repo-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .repo-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .contact-list li:hover {
+      transform: translateX(4px);
+      border-color: rgba(108, 199, 255, 0.3);
+      background: rgba(108, 199, 255, 0.045);
+    }
+
+    .contact-list .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(108,199,255,0.13), rgba(135,240,200,0.13));
+      color: var(--primary);
+      font-size: 1.1rem;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .contact-list li:hover .icon {
+      transform: scale(1.07) rotate(-4deg);
+      box-shadow: 0 0 18px rgba(108, 199, 255, 0.18);
+    }
+
+    .contact-list span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .contact-list strong {
+      font-size: 1rem;
+      overflow-wrap: anywhere;
+    }
+
+    .availability {
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(108,199,255,0.08), rgba(135,240,200,0.08));
+      border: 1px solid rgba(108,199,255,0.18);
+    }
+
+    .availability:hover {
+      transform: translateY(-3px);
+      border-color: rgba(108, 199, 255, 0.36);
+      background: linear-gradient(135deg, rgba(108,199,255,0.12), rgba(135,240,200,0.1));
+    }
+
+    .availability p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer {
+      padding: 24px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    html.motion-ready section:not(.hero) {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    html.motion-ready section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (hover: hover) {
+      .mini-stats .stat:hover {
+        transform: translateY(-4px);
+        border-color: rgba(108, 199, 255, 0.3);
+        background: rgba(108, 199, 255, 0.05);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .experience-grid,
+      .projects-grid,
+      .repo-grid {
+        grid-template-columns: 1fr;
+      }
+      .header-inner { flex-wrap: wrap; padding: 12px 0; }
+      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+      .nav {
+        display: none;
+        order: 3;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0;
+      }
+      .nav.is-open { display: flex; }
+      .nav a { padding: 10px 4px; }
+      .nav-mobile-cta {
+        display: block;
+        border-top: 1px solid var(--border);
+        margin-top: 6px;
+        padding-top: 14px !important;
+        color: var(--primary) !important;
+      }
+      .header-inner > .button-row { margin-left: auto; }
+      .hero-grid { gap: 28px; }
+      .hero-card { order: -1; }
+      .portrait-wrap { height: min(620px, 68vh); }
+    }
+
+    @media (max-width: 640px) {
+      .mini-stats,
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 36px; }
+      .hero-grid { gap: 18px; }
+      .hero-card { order: 0; }
+      .portrait-wrap { height: min(500px, 62vh); }
+      .header-inner > .button-row { display: none; }
+      .header-inner { gap: 12px; }
+      .brand { margin-right: auto; }
+      h1 { font-size: clamp(2.5rem, 12vw, 3.4rem); }
+      section { padding: 48px 0; }
+      .panel, .github-panel { padding: 22px; }
+      .project-card .thumb { height: 170px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+      .portrait-wrap::before { animation: none; }
+      .portrait-wrap img.is-active { animation: none; transform: none; }
+      body::before { animation: none; }
+      html.motion-ready section:not(.hero) { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Kulsoom Bano home">
+        <span class="brand-mark">KB</span>
+        <span>Kulsoom Bano</span>
+      </a>
+      <nav class="nav" id="main-navigation" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-mobile-cta" href="https://www.linkedin.com/in/kulsoom-bano-a25b88258" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="nav-mobile-cta" href="attachments/Kulsoom_Bano_Master_CV_v2.docx" download>Download CV</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <span>Menu</span>
+      </button>
+      <div class="button-row">
+        <a class="button secondary" href="https://www.linkedin.com/in/kulsoom-bano-a25b88258" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="button primary" href="attachments/Kulsoom_Bano_Master_CV_v2.docx" download>Download CV</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Available for opportunities</span>
+          <h1>Hi, I’m <span>Kulsoom Bano.</span></h1>
+          <p class="lead">
+            Graduate Software Developer and AI automation specialist building intelligent workflows,
+            mobile products, and full-stack systems that turn real-world problems into practical digital solutions.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="#contact">Let’s work together</a>
+            <a class="button secondary" href="https://github.com/kulsoom690" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+          <div class="mini-stats">
+            <div class="stat">
+              <strong>27</strong>
+              <span>GitHub repos</span>
+            </div>
+            <div class="stat">
+              <strong>6 mo</strong>
+              <span>AI internship</span>
+            </div>
+            <div class="stat">
+              <strong>2026</strong>
+              <span>Graduation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="portrait-wrap" id="portrait-slideshow" aria-label="Portrait photos of Kulsoom Bano">
+            <img class="is-active" src="attachments/kulsoom-portrait-passport.png" alt="Kulsoom Bano wearing a black hijab, head-and-shoulders portrait" width="490" height="610" fetchpriority="high" />
+            <img src="attachments/kulsoom-portrait-mustard-cutout.png" alt="Kulsoom Bano wearing a mustard-colored hijab, portrait photo" width="816" height="1173" />
+            <img src="attachments/kulsoom-portrait-office-cutout.png" alt="Kulsoom Bano standing in an office, wearing a mustard-colored hijab" width="722" height="1140" />
+          </div>
+          <div class="portrait-controls" aria-label="Portrait slideshow controls">
+            <button class="portrait-control" id="portrait-pause" type="button" aria-label="Pause portrait slideshow" aria-pressed="false">
+              <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+            <span class="portrait-count" id="portrait-count" aria-hidden="true">01 / 03</span>
+            <button class="portrait-control" id="portrait-next" type="button" aria-label="Show next portrait">
+              <i class="fa fa-step-forward" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">About Me</span>
+          <h2>Software engineer with a strong focus on AI, mobile, and automation.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="panel">
+            <p style="color: var(--muted); margin: 0; font-size: 1.04rem;">
+              I’m a Computer Science graduate from COMSATS University Islamabad, Attock Campus, driven by the idea of creating
+              useful digital products that are intelligent, reliable, and easy to use. My work spans AI agents, workflow automation,
+              cross-platform mobile apps, and full-stack web systems.
+            </p>
+            <div class="badge-list">
+              <span class="badge">AI Agents</span>
+              <span class="badge">n8n</span>
+              <span class="badge">Flutter</span>
+              <span class="badge">Laravel</span>
+              <span class="badge">React</span>
+              <span class="badge">Python</span>
+            </div>
+          </div>
+          <div class="panel">
+            <ul class="info-list">
+              <li><strong>Location</strong><span>Islamabad, Pakistan</span></li>
+              <li><strong>Email</strong><span>11kulsoombano@gmail.com</span></li>
+              <li><strong>Phone</strong><span>+92 345 5131544</span></li>
+              <li><strong>LinkedIn</strong><span>linkedin.com/in/kulsoom-bano-a25b88258</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Skills</span>
+          <h2>Tools and technologies I work with.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Languages</h3>
+            <ul>
+              <li>Java</li>
+              <li>Python</li>
+              <li>C++</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Dart</li>
+              <li>PHP</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Frontend & Mobile</h3>
+            <ul>
+              <li>Flutter</li>
+              <li>React</li>
+              <li>React Native</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Tailwind</li>
+              <li>jQuery</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>AI & Automation</h3>
+            <ul>
+              <li>n8n</li>
+              <li>Prompt Engineering</li>
+              <li>AI Agents</li>
+              <li>OpenAI APIs</li>
+              <li>Gemini APIs</li>
+              <li>LangChain</li>
+              <li>Hugging Face</li>
+              <li>TensorFlow Lite</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Backend & Data</h3>
+            <ul>
+              <li>Laravel</li>
+              <li>Node.js</li>
+              <li>FastAPI</li>
+              <li>REST APIs</li>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Firebase</li>
+              <li>GitHub Actions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Experience</span>
+          <h2>Professional background and recent work.</h2>
+        </div>
+
+        <div class="experience-grid">
+          <div class="panel">
+            <div class="timeline-item">
+              <div class="meta">Mar 2026 – Present</div>
+              <h3>Freelance AI Automation Developer</h3>
+              <p>Remote | Lead generation, data enrichment, and workflow automation.</p>
+              <ul>
+                <li>Built end-to-end short-term rental lead-generation pipelines with n8n, Python and LLM APIs.</li>
+                <li>Structured unstructured listing data into complete prospect profiles with validation and deduplication.</li>
+                <li>Integrated phone validation, CRM, and Google Sheets exports for sales-ready workflows.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="timeline-item">
+              <div class="meta">6 months</div>
+              <h3>AI Intern</h3>
+              <p>The Prime Crafters Technical</p>
+              <ul>
+                <li>Designed AI agents to automate repetitive business workflows.</li>
+                <li>Built email and social media automation pipelines using n8n and API integrations.</li>
+                <li>Applied prompt engineering to improve accuracy and downstream parsing reliability.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Projects</span>
+          <h2>Selected work demonstrating my development and AI experience.</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="thumb" aria-hidden="true"><i class="fa fa-mobile"></i></div>
+            <div class="content">
+              <span class="tag">Mobile AI</span>
+              <h3>smartScalX</h3>
+              <p>Android app that estimates food weight and calories from a single image using Flutter and TensorFlow Lite.</p>
+              <div class="tech">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>TensorFlow Lite</span>
+                <span>Firebase</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/kulsoom690" target="_blank" rel="noreferrer">View profile</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="thumb" aria-hidden="true"><i class="fa fa-cogs"></i></div>
+            <div class="content">
+              <span class="tag">Automation</span>
+              <h3>AI Workflow Agents</h3>
+              <p>n8n-driven automation pipelines connecting language models with email, social media, and third-party APIs.</p>
+              <div class="tech">
+                <span>n8n</span>
+                <span>Python</span>
+                <span>LLM APIs</span>
+                <span>Prompt Engineering</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/kulsoom690" target="_blank" rel="noreferrer">View profile</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="thumb" aria-hidden="true"><i class="fa fa-plane"></i></div>
+            <div class="content">
+              <span class="tag">Full-Stack</span>
+              <h3>Online Air Reservation System</h3>
+              <p>Booking platform with user authentication, validation, CRUD actions, and MySQL-backed reservation management.</p>
+              <div class="tech">
+                <span>PHP</span>
+                <span>Laravel</span>
+                <span>JavaScript</span>
+                <span>MySQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/kulsoom690" target="_blank" rel="noreferrer">View profile</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="thumb" aria-hidden="true"><i class="fa fa-train"></i></div>
+            <div class="content">
+              <span class="tag">OOP</span>
+              <h3>Railway Management System</h3>
+              <p>Java-based software for managing schedules and bookings using object-oriented design principles.</p>
+              <div class="tech">
+                <span>Java</span>
+                <span>OOP</span>
+                <span>Core Java</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/kulsoom690" target="_blank" rel="noreferrer">View profile</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="github-panel">
+          <div class="github-header">
+            <div>
+              <span class="kicker" style="margin-bottom: 8px;">GitHub</span>
+              <h3 style="margin: 0;">Auto-synced public repositories</h3>
+            </div>
+            <a class="button secondary" href="https://github.com/kulsoom690" target="_blank" rel="noreferrer">Open GitHub</a>
+          </div>
+          <div id="github-projects" class="repo-grid" aria-live="polite">
+            <p class="repo-status">Loading public repositories…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Contact</span>
+          <h2>Let’s build a practical product or automation workflow.</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="panel">
+            <ul class="contact-list">
+              <li>
+                <div class="icon"><i class="fa fa-map-marker"></i></div>
+                <div>
+                  <span>Location</span>
+                  <strong>Islamabad, Pakistan</strong>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa fa-envelope"></i></div>
+                <div>
+                  <span>Email</span>
+                  <strong>11kulsoombano@gmail.com</strong>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa fa-phone"></i></div>
+                <div>
+                  <span>Phone</span>
+                  <strong>+92 345 5131544</strong>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa fa-github"></i></div>
+                <div>
+                  <span>GitHub</span>
+                  <strong>github.com/kulsoom690</strong>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="availability">
+            <span class="kicker" style="margin-bottom: 8px;">Status</span>
+            <h3 style="margin-bottom: 10px;">Available immediately</h3>
+            <p>
+              I’m open to entry-level software engineering, AI automation, full-stack, and mobile app opportunities where I can
+              contribute with a strong technical foundation and hands-on product mindset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Kulsoom Bano</span>
+      <span>Built with a focus on AI, mobile, and full-stack product engineering.</span>
+    </div>
+  </footer>
+
+  <script>
+    const repoContainer = document.getElementById('github-projects');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.getElementById('main-navigation');
+    const portraitSlides = Array.from(document.querySelectorAll('#portrait-slideshow img'));
+    const portraitCount = document.getElementById('portrait-count');
+    const portraitPause = document.getElementById('portrait-pause');
+    const portraitNext = document.getElementById('portrait-next');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let activePortrait = 0;
+    let portraitTimer;
+    let portraitPaused = reducedMotion.matches;
+
+    function showPortrait(index) {
+      activePortrait = (index + portraitSlides.length) % portraitSlides.length;
+      portraitSlides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activePortrait;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      portraitCount.textContent = `${String(activePortrait + 1).padStart(2, '0')} / ${String(portraitSlides.length).padStart(2, '0')}`;
+    }
+
+    function updatePortraitPauseButton() {
+      const icon = portraitPause.querySelector('i');
+      const label = portraitPaused ? 'Play portrait slideshow' : 'Pause portrait slideshow';
+      portraitPause.setAttribute('aria-label', label);
+      portraitPause.setAttribute('aria-pressed', String(portraitPaused));
+      icon.className = `fa ${portraitPaused ? 'fa-play' : 'fa-pause'}`;
+    }
+
+    function startPortraitSlideshow() {
+      window.clearInterval(portraitTimer);
+      if (!portraitPaused && !document.hidden && portraitSlides.length > 1) {
+        portraitTimer = window.setInterval(() => showPortrait(activePortrait + 1), 5000);
+      }
+    }
+
+    const starCanvas = document.getElementById('starfield');
+    const starContext = starCanvas.getContext('2d');
+    const stars = [];
+    const comets = [];
+    let starFrame;
+    let canvasWidth = 0;
+    let canvasHeight = 0;
+    let starfieldPaused = reducedMotion.matches || document.hidden;
+    let previousCometSide = -1;
+    let nextCometAt = performance.now() + 4500 + Math.random() * 4500;
+
+    function resizeStarfield() {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      canvasWidth = window.innerWidth;
+      canvasHeight = window.innerHeight;
+      starCanvas.width = Math.round(canvasWidth * pixelRatio);
+      starCanvas.height = Math.round(canvasHeight * pixelRatio);
+      starContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      comets.length = 0;
+      nextCometAt = performance.now() + 4500 + Math.random() * 4500;
+      const starCount = Math.min(150, Math.max(48, Math.round(canvasWidth * canvasHeight / 11000)));
+      stars.length = 0;
+      for (let index = 0; index < starCount; index += 1) {
+        stars.push({
+          x: Math.random() * canvasWidth,
+          y: Math.random() * canvasHeight,
+          radius: Math.random() * 0.9 + 0.45,
+          alpha: Math.random() * 0.4 + 0.45,
+          glow: Math.random() > 0.72,
+          phase: Math.random() * Math.PI * 2,
+          speed: Math.random() * 0.018 + 0.006,
+          drift: (Math.random() - 0.5) * 0.08,
+          gravityX: 0,
+          gravityY: 0
+        });
+      }
+      drawStarfield(0, false);
+    }
+
+    function launchComet(time) {
+      const sides = [0, 1, 2, 3].filter(side => side !== previousCometSide);
+      const side = sides[Math.floor(Math.random() * sides.length)];
+      const variation = (Math.random() - 0.5) * 0.75;
+      let x;
+      let y;
+      let dx;
+      let dy;
+      if (side === 0) {
+        x = -8;
+        y = Math.random() * canvasHeight;
+        dx = 1;
+        dy = variation;
+      } else if (side === 1) {
+        x = canvasWidth + 8;
+        y = Math.random() * canvasHeight;
+        dx = -1;
+        dy = variation;
+      } else if (side === 2) {
+        x = Math.random() * canvasWidth;
+        y = -8;
+        dx = variation;
+        dy = 1;
+      } else {
+        x = Math.random() * canvasWidth;
+        y = canvasHeight + 8;
+        dx = variation;
+        dy = -1;
+      }
+      const directionLength = Math.hypot(dx, dy);
+      const size = Math.random() < 0.3 ? 1.25 + Math.random() * 0.4 : 0.72 + Math.random() * 0.3;
+      const speed = 0.85 + Math.random() * 0.4;
+      comets.push({
+        x,
+        y,
+        dx: dx / directionLength,
+        dy: dy / directionLength,
+        speed,
+        size,
+        length: (95 + Math.random() * 65) * size,
+        age: 0,
+        alpha: 0.85 + Math.random() * 0.15,
+        sparkles: Array.from({ length: Math.round(5 * size) }, () => ({
+          distance: 12 + Math.random() * 85 * size,
+          speed: 0.12 + Math.random() * 0.28,
+          size: (0.35 + Math.random() * 0.35) * Math.min(size, 1.4),
+          phase: Math.random() * Math.PI * 2
+        }))
+      });
+      previousCometSide = side;
+      nextCometAt = Infinity;
+    }
+
+    function drawStarfield(time, animate = true) {
+      starContext.clearRect(0, 0, canvasWidth, canvasHeight);
+      stars.forEach(star => {
+        if (animate) {
+          let gravityX = 0;
+          let gravityY = 0;
+          comets.forEach(comet => {
+            const dx = comet.x - star.x;
+            const dy = comet.y - star.y;
+            const distance = Math.hypot(dx, dy);
+            const gravityRadius = 120 + comet.size * 30;
+            const influence = Math.max(0, 1 - distance / gravityRadius);
+            if (distance > 0 && influence > 0) {
+              const pull = influence * influence * 0.004 * comet.size;
+              gravityX += (dx / distance) * pull;
+              gravityY += (dy / distance) * pull;
+            }
+          });
+          star.gravityX = Math.max(-0.35, Math.min(0.35, (star.gravityX + gravityX) * 0.92));
+          star.gravityY = Math.max(-0.35, Math.min(0.35, (star.gravityY + gravityY) * 0.92));
+          star.y -= 0.025;
+          star.x += star.drift + star.gravityX;
+          star.y += star.gravityY;
+          if (star.y < -2) star.y = canvasHeight + 2;
+          if (star.x < -2) star.x = canvasWidth + 2;
+          if (star.x > canvasWidth + 2) star.x = -2;
+        }
+        const twinkle = animate ? 0.68 + Math.sin(time * star.speed + star.phase) * 0.32 : 0.95;
+        starContext.beginPath();
+        starContext.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        starContext.fillStyle = `rgba(210, 231, 255, ${star.alpha * twinkle})`;
+        starContext.shadowColor = 'rgba(108, 199, 255, 0.9)';
+        starContext.shadowBlur = star.glow ? 12 : 4;
+        starContext.fill();
+      });
+      starContext.shadowBlur = 0;
+      if (animate && !starfieldPaused) {
+        if (comets.length === 0 && time >= nextCometAt) launchComet(time);
+        comets.forEach(comet => {
+          comet.x += comet.dx * comet.speed;
+          comet.y += comet.dy * comet.speed;
+          comet.age += 1;
+          const fadeIn = Math.min(1, comet.age / 18);
+          const edgeX = comet.dx > 0
+            ? (canvasWidth - comet.x) / comet.dx
+            : comet.dx < 0
+              ? (0 - comet.x) / comet.dx
+              : Infinity;
+          const edgeY = comet.dy > 0
+            ? (canvasHeight - comet.y) / comet.dy
+            : comet.dy < 0
+              ? (0 - comet.y) / comet.dy
+              : Infinity;
+          const edgeDistance = Math.min(edgeX, edgeY);
+          const fadeOut = Math.max(0, Math.min(1, edgeDistance / 85));
+          const opacity = comet.alpha * fadeIn * fadeOut;
+          const tailX = comet.x - comet.dx * comet.length;
+          const tailY = comet.y - comet.dy * comet.length;
+          const trail = starContext.createLinearGradient(tailX, tailY, comet.x, comet.y);
+          trail.addColorStop(0, 'rgba(160, 218, 255, 0)');
+          trail.addColorStop(0.72, `rgba(160, 218, 255, ${opacity * 0.22})`);
+          trail.addColorStop(1, `rgba(235, 248, 255, ${opacity * 0.72})`);
+          starContext.beginPath();
+          starContext.moveTo(tailX, tailY);
+          starContext.lineTo(comet.x, comet.y);
+          starContext.strokeStyle = trail;
+          starContext.lineWidth = 0.9 * comet.size;
+          starContext.lineCap = 'round';
+          starContext.shadowColor = 'rgba(108, 199, 255, 0.75)';
+          starContext.shadowBlur = 7 * comet.size;
+          starContext.stroke();
+          starContext.beginPath();
+          starContext.moveTo(comet.x - comet.dx * comet.size * 1.1, comet.y - comet.dy * comet.size * 1.1);
+          starContext.lineTo(comet.x, comet.y);
+          starContext.strokeStyle = `rgba(245, 251, 255, ${opacity})`;
+          starContext.lineWidth = 1.1 * comet.size;
+          starContext.shadowColor = 'rgba(205, 239, 255, 0.85)';
+          starContext.shadowBlur = 5 * comet.size;
+          starContext.stroke();
+          comet.sparkles.forEach(sparkle => {
+            sparkle.distance -= sparkle.speed;
+            if (sparkle.distance < 0) sparkle.distance = 25 + Math.random() * 100;
+            const shimmer = 0.45 + Math.sin(time * 0.012 + sparkle.phase) * 0.35;
+            const offset = Math.sin(time * 0.004 + sparkle.phase) * 5 * comet.size;
+            const sparkleX = comet.x - comet.dx * sparkle.distance - comet.dy * offset;
+            const sparkleY = comet.y - comet.dy * sparkle.distance + comet.dx * offset;
+            starContext.beginPath();
+            starContext.arc(sparkleX, sparkleY, sparkle.size, 0, Math.PI * 2);
+            starContext.fillStyle = `rgba(205, 239, 255, ${shimmer * opacity * 0.55})`;
+            starContext.shadowColor = 'rgba(130, 210, 255, 0.65)';
+            starContext.shadowBlur = 4 * comet.size;
+            starContext.fill();
+          });
+          starContext.shadowBlur = 0;
+        });
+        const hadComets = comets.length > 0;
+        const remainingComets = comets.filter(comet =>
+          comet.x >= -comet.length &&
+          comet.x <= canvasWidth + comet.length &&
+          comet.y >= -comet.length &&
+          comet.y <= canvasHeight + comet.length
+        );
+        comets.splice(0, comets.length, ...remainingComets);
+        if (hadComets && comets.length === 0) nextCometAt = time + 7500 + Math.random() * 6500;
+        starFrame = window.requestAnimationFrame(drawStarfield);
+      }
+    }
+
+    function updateStarfieldMotion() {
+      starfieldPaused = reducedMotion.matches || document.hidden;
+      window.cancelAnimationFrame(starFrame);
+      drawStarfield(0, false);
+      if (!starfieldPaused) starFrame = window.requestAnimationFrame(drawStarfield);
+    }
+
+    resizeStarfield();
+    updateStarfieldMotion();
+    window.addEventListener('resize', resizeStarfield, { passive: true });
+    document.addEventListener('visibilitychange', updateStarfieldMotion);
+    reducedMotion.addEventListener('change', updateStarfieldMotion);
+
+    const pageSections = Array.from(document.querySelectorAll('main section'));
+    const navigationLinks = Array.from(navigation.querySelectorAll('a[href^="#"]'));
+    if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+      document.documentElement.classList.add('motion-ready');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      pageSections.forEach(section => revealObserver.observe(section));
+    }
+
+    if ('IntersectionObserver' in window) {
+      const navigationObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          navigationLinks.forEach(link => {
+            link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
+          });
+        });
+      }, { rootMargin: '-24% 0px -68% 0px' });
+      pageSections.forEach(section => navigationObserver.observe(section));
+    }
+
+    portraitNext.addEventListener('click', () => showPortrait(activePortrait + 1));
+    portraitPause.addEventListener('click', () => {
+      portraitPaused = !portraitPaused;
+      updatePortraitPauseButton();
+      startPortraitSlideshow();
+    });
+    document.addEventListener('visibilitychange', startPortraitSlideshow);
+    reducedMotion.addEventListener('change', event => {
+      if (event.matches) portraitPaused = true;
+      updatePortraitPauseButton();
+      startPortraitSlideshow();
+    });
+    showPortrait(activePortrait);
+    updatePortraitPauseButton();
+    startPortraitSlideshow();
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function renderRepos(repos) {
+      const cleanRepos = repos
+        .filter(repo => !repo.fork && !repo.archived)
+        .sort((a, b) => new Date(b.updated_at || 0) - new Date(a.updated_at || 0))
+        .slice(0, 6);
+
+      if (cleanRepos.length === 0) {
+        repoContainer.innerHTML = '<p class="repo-status">No public repositories are available to display right now.</p>';
+        return;
+      }
+
+      repoContainer.innerHTML = cleanRepos.map(repo => `
+        <article class="repo-card">
+          <div class="repo-card__top">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="repo-dot"></span>
+              <h4>${escapeHtml(repo.name)}</h4>
+            </div>
+            <a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
+              <i class="fa fa-external-link"></i>
+            </a>
+          </div>
+          <p>${escapeHtml(repo.description || 'Public project repository')}</p>
+          <div class="repo-meta">
+            <span>${escapeHtml(repo.language || 'Code')}</span>
+            <span>⭐ ${repo.stargazers_count || 0}</span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      navigation.classList.toggle('is-open', !isOpen);
+    });
+
+    navigation.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navigation.classList.remove('is-open');
+      }
+    });
+
+    fetch('https://api.github.com/users/kulsoom690/repos?per_page=100')
+      .then(response => {
+        if (!response.ok) throw new Error(`GitHub API request failed (${response.status})`);
+        return response.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data)) throw new Error('GitHub returned an unexpected repository response.');
+        renderRepos(data);
+      })
+      .catch(error => {
+        repoContainer.innerHTML = `
+          <p class="repo-status">
+            Repositories could not be loaded right now.
+            <a href="https://github.com/kulsoom690?tab=repositories" target="_blank" rel="noopener noreferrer">Browse them on GitHub</a>.
+          </p>`;
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
